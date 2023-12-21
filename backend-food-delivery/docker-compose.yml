@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  cache:
+    container_name: redis
+    image: redis:alpine
+    restart: always
+    ports:
+      - '${REDIS_PORT}:${REDIS_PORT}'
+    command: redis-server --save 20 1 --loglevel debug
+    volumes:
+      - cache:/data
+volumes:
+  cache:
+    driver: local
