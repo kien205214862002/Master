@@ -14,7 +14,7 @@ type AppError struct {
 	Log        string `json:"log"`
 	Key        string `json:"error_key"`
 }
-
+//test
 func NewErrorResponse(root error, msg, log, key string) *AppError {
 	return &AppError{
 		StatusCode: http.StatusBadRequest,
